@@ -10,6 +10,18 @@
 //
 // Use only what you learned! No loops yet, so you'll have to use recursion!
 
+#[warn(unconditional_recursion)]
+fn factorial(value_to_factor: u32) -> u32 {
+    if value_to_factor == 0 {
+        return 1u32
+    }
+    
+    if value_to_factor != 1 {
+        return value_to_factor * factorial(value_to_factor - 1u32)
+    }
+    1u32
+}
+
 #[cfg(test)]
 mod tests {
     use crate::factorial;
